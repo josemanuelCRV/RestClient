@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="requestObj" type="requestObj"/>
+<xs:complexType name="requestObj">
+       <xs:sequence>
+              <xs:element name="title" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Documentation test]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="singer" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+</xs:schema>

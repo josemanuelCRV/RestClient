@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?enunciate-assumed-base-uri ./?>
+<wadl:application xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <wadl:doc xmlns:enunciate="http://enunciate.webcohesion.com/" enunciate:generatedBy="Enunciate-2.0"/>
+  
+  <wadl:grammars>
+    <wadl:include href="ns0.xsd"/>
+  </wadl:grammars>
+
+  <wadl:resources base="./">
+
+    <wadl:resource path="test">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[This method return a hello World
+
+http://localhost:8080/TestJersey2/rest/test]]></wadl:doc>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="test/filter">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="test/get">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[This method return a hello World
+
+http://localhost:8080/TestJersey2/rest/get]]></wadl:doc>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="test/get">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[This method produces a JSON]]></wadl:doc>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="test/head">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="test/put">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Test for the PUT]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[Response status and entity response obj
+
+<p>
+http://localhost:8080/TestJersey2/rest/test/put
+</p>
+
+{@code Invoke <br>
+<b><code>{"title": "Enter title", "singer": "Some singer"}</code>]]></wadl:doc>
+          <wadl:representation mediaType="text/html"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="test/validate">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Validated Test]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="test/post-id/{id}">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Test for the POST
+
+This method uses the final url part as parameter
+
+http://localhost:8080/TestJersey2/rest/test/post-id/33]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="id" style="template">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+  </wadl:resources>
+</wadl:application>

@@ -1,0 +1,331 @@
+{
+  "swagger": "2.0",
+  "info" : {
+    "description" : "<h1>TestJersey2<\/h1>",
+    "version" : "0.0.1-SNAPSHOT",
+    "title" : "TestJersey2"
+  },
+  "schemes" : [],
+  "tags" : [
+    {
+      "name" : "TestServer"
+      ,
+      "description" : "Server tests\r\n\r\nhttp://localhost:8080/TestJersey2/rest/test."
+    }
+  ],
+  "definitions" : {
+    "json_RequestObj" : {
+      "type" : "object",
+      "title" : "RequestObj",
+          "properties" : {
+            "title" : {
+"description" : "Documentation test",
+"type" : "string"
+            },
+            "singer" : {
+"description" : "",
+"type" : "string"
+            }
+          },
+      "example" : {
+  "title" : "...",
+  "singer" : "..."
+},
+      "description" : ""
+    }
+    ,
+    "json_ResponseObj" : {
+      "type" : "object",
+      "title" : "ResponseObj",
+          "properties" : {
+            "result" : {
+"description" : "",
+"type" : "string"
+            },
+            "error" : {
+"description" : "",
+"type" : "string"
+            },
+            "retorno" : {
+"description" : "",
+"type" : "string"
+            }
+          },
+      "example" : {
+  "result" : "...",
+  "error" : "...",
+  "retorno" : "..."
+},
+      "description" : ""
+    }
+    ,
+    "xml_ns0_requestObj" : {
+      "type" : "object",
+      "title" : "requestObj",
+      "allOf" : [
+        {
+          "properties" : {
+            "singer" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "title" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "Documentation test",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+  },
+  "paths": {
+    "\/test" : {
+      "get" : {
+        "tags" : [ "TestServer" ],
+        "summary" : "This method return a hello World\r\n\r\nhttp://localhost:8080/TestJersey2/rest/test.",
+        "description" : "This method return a hello World\r\n\r\nhttp://localhost:8080/TestJersey2/rest/test",
+        "operationId" : "resource_TestServer_inicio_GET",
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "headers" : {
+            },
+            "examples" : {
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/test/filter" : {
+      "get" : {
+        "tags" : [ "TestServer" ],
+        "description" : "",
+        "operationId" : "resource_TestServer_getWadlInJSON_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "headers" : {
+            },
+            "examples" : {
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/test/get" : {
+      "get" : {
+        "tags" : [ "TestServer" ],
+        "summary" : "This method return a hello World\r\n\r\nhttp://localhost:8080/TestJersey2/rest/get.",
+        "description" : "This method return a hello World\r\n\r\nhttp://localhost:8080/TestJersey2/rest/get",
+        "operationId" : "resource_TestServer_hello_GET",
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "headers" : {
+            },
+            "examples" : {
+            },
+            "description" : "Success"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "TestServer" ],
+        "summary" : "This method produces a JSON.",
+        "description" : "This method produces a JSON",
+        "operationId" : "resource_TestServer_getTrackInJSON_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_RequestObj"
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "title" : "...",
+  "singer" : "..."
+}
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/test/head" : {
+      "get" : {
+        "tags" : [ "TestServer" ],
+        "description" : "",
+        "operationId" : "resource_TestServer_getHeaders_GET",
+        "produces" : [ "application/json" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "file"
+            },
+            "headers" : {
+            },
+            "examples" : {
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/test/put" : {
+      "put" : {
+        "tags" : [ "TestServer" ],
+        "summary" : "Test for the PUT.",
+        "description" : "Test for the PUT",
+        "operationId" : "resource_TestServer_objectToLine_PUT",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "text/html" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "headers" : {
+            },
+            "examples" : {
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/test/validate" : {
+      "post" : {
+        "tags" : [ "TestServer" ],
+        "summary" : "Validated Test.",
+        "description" : "Validated Test",
+        "operationId" : "resource_TestServer_validateField_POST",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_RequestObj"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "file"
+            },
+            "headers" : {
+            },
+            "examples" : {
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/test/post-id/{id}" : {
+      "post" : {
+        "tags" : [ "TestServer" ],
+        "summary" : "Test for the POST\r\n\r\nThis method uses the final url part as parameter\r\n\r\nhttp://localhost:8080/TestJersey2/rest/test/post-id/33.",
+        "description" : "Test for the POST\r\n\r\nThis method uses the final url part as parameter\r\n\r\nhttp://localhost:8080/TestJersey2/rest/test/post-id/33",
+        "operationId" : "resource_TestServer_getID_POST",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "required" : true,
+            "type" : "integer",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_RequestObj"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_ResponseObj"
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "result" : "...",
+  "error" : "...",
+  "retorno" : "..."
+}
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+  }
+}

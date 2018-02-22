@@ -1,0 +1,12 @@
+com\test\ws\config\PoweredByResponseFilter.class
+com\test\ws\rest\GenericException.class
+com\test\ws\client\ClientFactory.class
+com\test\ws\client\BkClient.class
+com\test\ws\client\TestTimeOutClient.class
+com\test\ws\client\JerseyClientBase.class
+com\test\ws\client\TestClient.class
+com\test\ws\view\RequestObj.class
+com\test\ws\view\ResponseObj.class
+com\test\ws\Employee.class
+com\test\ws\rest\ConstraintViolationMapper.class
+com\test\ws\rest\TestServer.class
