@@ -18,8 +18,8 @@
 		<jaxrs.version>2.0.1</jaxrs.version>
 		<tomcat.version>7.0.69</tomcat.version>
 		<enunciate.version>2.8.0</enunciate.version>
-		<log4j.version>1.2.17</log4j.version>		
-   		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<log4j.version>1.2.17</log4j.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<!-- JAX-RS -->
@@ -28,13 +28,13 @@
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>${jaxrs.version}</version>
 		</dependency>
-        <!-- Jersey Cliente-->
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>${jersey2.version}</version>
-        </dependency>
-		<!-- Jersey Server-->
+		<!-- Jersey Cliente -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+		<!-- Jersey Server -->
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
@@ -52,16 +52,16 @@
 		</dependency>
 		<!-- Validación Jersey -->
 		<dependency>
-		    <groupId>org.glassfish.jersey.ext</groupId>
-		    <artifactId>jersey-bean-validation</artifactId>
-		    <version>${jersey2.version}</version>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-bean-validation</artifactId>
+			<version>${jersey2.version}</version>
 		</dependency>
 		<!-- libreria Jackson para JSON -->
 		<dependency>
-		    <groupId>org.glassfish.jersey.media</groupId>
-		    <artifactId>jersey-media-json-jackson</artifactId>
-		    <version>${jersey2.version}</version>
-		</dependency> 
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
 		<!-- log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -74,34 +74,44 @@
 			<version>${tomcat.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.jmclabs.rest</groupId>
+			<artifactId>rest-invoker</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<finalName>TestJersey2</finalName>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-			<plugin>
-			  <groupId>com.webcohesion.enunciate</groupId>
-			  <artifactId>enunciate-maven-plugin</artifactId>
-			  <version>2.8.0</version>
-			
-			  <configuration>
-					<docsDir>${project.build.directory}/TestJersey2/docs</docsDir>
-			  </configuration>
-			  <executions>
-			    <execution>
-			      <goals>
-			        <goal>assemble</goal>
-			      </goals>
-			    </execution>
-			  </executions>
-			</plugin>
-		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.webcohesion.enunciate</groupId>
+					<artifactId>enunciate-maven-plugin</artifactId>
+					<version>2.8.0</version>
+
+					<configuration>
+						<docsDir>${project.build.directory}/TestJersey2/docs</docsDir>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>assemble</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>

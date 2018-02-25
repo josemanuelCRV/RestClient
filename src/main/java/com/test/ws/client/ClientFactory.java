@@ -23,6 +23,7 @@ public final class ClientFactory {
 		// values are in milliseconds
 		clientConfig.property(ClientProperties.READ_TIMEOUT, 2000);
 		clientConfig.property(ClientProperties.CONNECT_TIMEOUT, 500);
+		clientConfig.property(ClientProperties.ASYNC_THREADPOOL_SIZE, 20);
 		clientConfig.register(PoweredByResponseFilter.class);
 		clientConfig.register(new MyContainerRequestFilter());
 		clientConfig.register(new MyClientRequestFilter());
